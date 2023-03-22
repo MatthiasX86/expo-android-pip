@@ -1,9 +1,11 @@
-<manifest package="expo.modules.androidpip"
+<manifest xmlns:tools="http://schemas.android.com/tools"
+    package="expo.modules.androidpip"
     xmlns:android="http://schemas.android.com/apk/res/android">
   <application>
     <activity
       android:supportsPictureInPicture="true"
       android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
-        android:name="VideoActivity" />
+        android:name="ExpoAndroidPipModule"
+        tools:ignore="Instantiatable" />
   </application>
 </manifest>
