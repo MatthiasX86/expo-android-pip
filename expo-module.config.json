@@ -1,0 +1,9 @@
+{
+  "platforms": ["ios", "android", "web"],
+  "ios": {
+    "modules": ["ExpoAndroidPipModule"]
+  },
+  "android": {
+    "modules": ["expo.modules.androidpip.ExpoAndroidPipModule"]
+  }
+}
