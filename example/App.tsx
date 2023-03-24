@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from "react-native";
 
-import * as ExpoAndroidPip from 'expo-android-pip';
+import * as ExpoAndroidPip from "expo-android-pip";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>{ExpoAndroidPip.hello()}</Text>
+      <Button title="Press me" onPress={() => ExpoAndroidPip.hello()} />
     </View>
   );
 }
@@ -13,8 +13,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

@@ -5,7 +5,7 @@
     <activity
       android:supportsPictureInPicture="true"
       android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
-        android:name="ExpoAndroidPipModule"
-        tools:ignore="Instantiatable" />
+        android:name="PipController"
+    />
   </application>
 </manifest>
