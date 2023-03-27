@@ -7,8 +7,8 @@ export default {
     name: "expo-android-pip-example",
     slug: "expo-android-pip-example",
     owner: "ligonier",
-    currentFullName: "@ligonier/media-player-poc",
-    originalFullName: "@ligonier/media-player-poc",
+    currentFullName: "@ligonier/expo-android-pip-example",
+    originalFullName: "@ligonier/expo-android-pip-example",
     version: "1.0.0",
     orientation: "portrait",
     privacy: "hidden",
@@ -46,11 +46,11 @@ export default {
       enabled: true,
       checkAutomatically: "ON_LOAD",
       fallbackToCacheTimeout: 15000,
-      url: "https://u.expo.dev/02a7a93d-57c9-4d9b-ab1c-d61796251363",
+      url: "https://u.expo.dev/4c79860f-2217-4606-abe1-78163431fad8",
     },
     extra: {
       eas: {
-        projectId: "02a7a93d-57c9-4d9b-ab1c-d61796251363",
+        projectId: "4c79860f-2217-4606-abe1-78163431fad8",
       },
     },
   }
