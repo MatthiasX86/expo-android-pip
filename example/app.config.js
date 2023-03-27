@@ -4,8 +4,8 @@
 
 export default {
   expo: {
-    name: "media-player-poc",
-    slug: "media-player-poc",
+    name: "expo-android-pip-example",
+    slug: "expo-android-pip-example",
     owner: "ligonier",
     currentFullName: "@ligonier/media-player-poc",
     originalFullName: "@ligonier/media-player-poc",
@@ -30,7 +30,7 @@ export default {
     },
     ios: {
       supportsTablet: true,
-      bundleIdentifier: "org.ligonier.mediaplayerpoc",
+      bundleIdentifier: "expo.modules.androidpip.example",
       infoPlist: {
         UIBackgroundModes: ["audio"],
       },
@@ -40,7 +40,7 @@ export default {
         foregroundImage: "./assets/images/adaptive-icon.png",
         backgroundColor: "#ffffff",
       },
-      package: "org.ligonier.mediaplayerpoc",
+      package: "expo.modules.androidpip.example"
     },
     updates: {
       enabled: true,
