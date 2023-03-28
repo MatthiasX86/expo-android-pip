@@ -2946,11 +2946,6 @@ electron-to-chromium@^1.4.284:
   resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.335.tgz"
   integrity sha512-l/eowQqTnrq3gu+WSrdfkhfNHnPgYqlKAwxz7MTOj6mom19vpEDHNXl6dxDxyTiYuhemydprKr/HCrHfgk+OfQ==
 
-eme-encryption-scheme-polyfill@^2.0.1:
-  version "2.1.1"
-  resolved "https://registry.npmjs.org/eme-encryption-scheme-polyfill/-/eme-encryption-scheme-polyfill-2.1.1.tgz"
-  integrity sha512-njD17wcUrbqCj0ArpLu5zWXtaiupHb/2fIUQGdInf83GlI+Q6mmqaPGLdrke4savKAu15J/z1Tg/ivDgl14g0g==
-
 emoji-regex@^8.0.0:
   version "8.0.0"
   resolved "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz"
@@ -5492,15 +5487,14 @@ react-native-safe-area-context@^4.5.0:
   resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-4.5.0.tgz"
   integrity sha512-0WORnk9SkREGUg2V7jHZbuN5x4vcxj/1B0QOcXJjdYWrzZHgLcUzYWWIUecUPJh747Mwjt/42RZDOaFn3L8kPQ==
 
-react-native-video@^5.2.1:
-  version "5.2.1"
-  resolved "https://registry.npmjs.org/react-native-video/-/react-native-video-5.2.1.tgz"
-  integrity sha512-aJlr9MeTuQ0LpZ4n+EC9RvhoKeiPbLtI2Rxy8u7zo/wzGevbRpWHSBj9xZ5YDBXnAVXzuqyNIkGhdw7bfdIBZw==
+react-native-video@6.0.0-alpha.5:
+  version "6.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/react-native-video/-/react-native-video-6.0.0-alpha.5.tgz#f6b6eebb698a03b46d42105f4b3fe08eb468ae46"
+  integrity sha512-EiqCkhcMEW5GdSg0WSsV6m29eZYjZ9zp7W+Lc2QlWmzItZr08JfMcvKOeL3fp/y0D2eQRAkzP5qI0GC4NBvhKg==
   dependencies:
     deprecated-react-native-prop-types "^2.2.0"
     keymirror "^0.1.1"
     prop-types "^15.7.2"
-    shaka-player "^2.5.9"
 
 react-native@0.71.4:
   version "0.71.4"
@@ -5917,13 +5911,6 @@ setprototypeof@1.2.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.2.0.tgz"
   integrity sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==
-
-shaka-player@^2.5.9:
-  version "2.5.23"
-  resolved "https://registry.npmjs.org/shaka-player/-/shaka-player-2.5.23.tgz"
-  integrity sha512-3MC9k0OXJGw8AZ4n/ZNCZS2yDxx+3as5KgH6Tx4Q5TRboTBBCu6dYPI5vp1DxKeyU12MBN1Zcbs7AKzXv2EnCg==
-  dependencies:
-    eme-encryption-scheme-polyfill "^2.0.1"
 
 shallow-clone@^3.0.0:
   version "3.0.1"

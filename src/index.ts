@@ -1,7 +1,9 @@
 import ExpoAndroidPipModule from "./ExpoAndroidPipModule";
 
-export function hello(): string {
+export function enterPipMode() {
+  if (!ExpoAndroidPipModule) {
+    return;
+  }
+
   return ExpoAndroidPipModule.activate();
-  // return ExpoAndroidPipModule.getDeviceVersion();
-  // return ExpoAndroidPipModule.getActivity();
 }

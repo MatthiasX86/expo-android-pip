@@ -10,7 +10,7 @@ export default function App() {
       {/* <View style={styles.container}> */}
       {/*   <Button title="Press me" onPress={() => ExpoAndroidPip.hello()} /> */}
       {/* </View> */}
-      <Player />
+      <Player start={0} onFinished={() => console.log("video finished")} />
     </Providers>
   );
 }

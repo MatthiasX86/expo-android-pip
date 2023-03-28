@@ -106,10 +106,14 @@ PODS:
     - ReactCommon/turbomodule/core (= 0.71.4)
   - fmt (6.2.1)
   - glog (0.3.5)
+  - GoogleAds-IMA-iOS-SDK (3.18.4)
   - hermes-engine (0.71.4):
     - hermes-engine/Pre-built (= 0.71.4)
   - hermes-engine/Pre-built (0.71.4)
   - libevent (2.1.12)
+  - PromisesObjC (2.1.1)
+  - PromisesSwift (2.1.1):
+    - PromisesObjC (= 2.1.1)
   - RCT-Folly (2021.07.22.00):
     - boost
     - DoubleConversion
@@ -367,10 +371,13 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
-  - react-native-video (5.2.1):
+  - react-native-video (6.0.0-alpha.5):
     - React-Core
-    - react-native-video/Video (= 5.2.1)
-  - react-native-video/Video (5.2.1):
+    - react-native-video/Video (= 6.0.0-alpha.5)
+  - react-native-video/Video (6.0.0-alpha.5):
+    - GoogleAds-IMA-iOS-SDK (~> 3.18.1)
+    - GoogleAds-IMA-tvOS-SDK (~> 4.2)
+    - PromisesSwift
     - React-Core
   - React-perflogger (0.71.4)
   - React-RCTActionSheet (0.71.4):
@@ -516,7 +523,10 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - fmt
+    - GoogleAds-IMA-iOS-SDK
     - libevent
+    - PromisesObjC
+    - PromisesSwift
 
 EXTERNAL SOURCES:
   boost:
@@ -644,8 +654,11 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: 241709e132e3bf1526c1c4f00bc5384dd39dfba9
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
+  GoogleAds-IMA-iOS-SDK: b01284e3bf3d64ba948de6692ffda531452c3713
   hermes-engine: a1f157c49ea579c28b0296bda8530e980c45bdb3
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
+  PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
+  PromisesSwift: 99fddfe4a0ec88a56486644c0da106694c92a604
   RCT-Folly: 424b8c9a7a0b9ab2886ffe9c3b041ef628fd4fb1
   RCTRequired: 5a024fdf458fa8c0d82fc262e76f982d4dcdecdd
   RCTTypeSafety: b6c253064466411c6810b45f66bc1e43ce0c54ba
@@ -661,7 +674,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 1f51e775819199d3fe9410e69ee8d4c4161c7b06
   React-logger: 0d58569ec51d30d1792c5e86a8e3b78d24b582c6
   react-native-safe-area-context: 39c2d8be3328df5d437ac1700f4f3a4f75716acc
-  react-native-video: c26780b224543c62d5e1b2a7244a5cd1b50e8253
+  react-native-video: a38e0a394fd8884fef4a48d866f1ed9a930f8385
   React-perflogger: 0bb0522a12e058f6eb69d888bc16f40c16c4b907
   React-RCTActionSheet: bfd675a10f06a18728ea15d82082d48f228a213a
   React-RCTAnimation: 2fa220b2052ec75b733112aca39143d34546a941
@@ -679,4 +692,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 9ef6401730e9a624292c89e2a1240751d8aa3516
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.11.3
