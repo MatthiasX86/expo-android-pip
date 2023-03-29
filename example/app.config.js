@@ -53,5 +53,15 @@ export default {
         projectId: "4c79860f-2217-4606-abe1-78163431fad8",
       },
     },
+    plugins: [
+      [
+        "expo-build-properties",
+        {
+          ios: {
+            flipper: "0.187.0"
+          }
+        }
+      ]
+    ]
   }
 }
