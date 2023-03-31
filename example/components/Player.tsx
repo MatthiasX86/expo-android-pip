@@ -340,6 +340,12 @@ export const VideoPlayer: React.FC<Props> = function ({ start, onFinished }) {
           onLoad={onLoadHandler}
           onEnd={onFinished}
           onSeek={onSeek}
+          onPictureInPictureStatusChanged={() => {
+            console.log("test");
+          }}
+          onRestoreUserInterfaceForPictureInPictureStop={() => {
+            console.log("test");
+          }}
           style={styles.player.video}
           progressUpdateInterval={250}
           ignoreSilentSwitch={"ignore"}
