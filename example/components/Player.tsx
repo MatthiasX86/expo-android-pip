@@ -11,13 +11,17 @@ import {
   Text,
   Dimensions,
   PanResponderInstance,
+  ActivityIndicator,
 } from "react-native";
 import Video, {
   OnLoadData,
   OnProgressData,
   OnSeekData,
 } from "react-native-video";
+import TrackPlayer, { useTrackPlayerEvents, Event, State } from 'react-native-track-player';
+import { useSetupPlayer } from "../hooks/useSetupPlayer";
 // import { LoadingIndicator } from './LoadingIndicator';
+
 
 const SCREEN_WIDTH = Dimensions.get("screen").width;
 const SCREEN_HEIGHT = Dimensions.get("screen").height;
@@ -30,12 +34,72 @@ const bufferConfig = {
   bufferForPlaybackAfterRebufferMs: 100,
 };
 
+// Subscribing to the following events inside MyComponent
+const events = [
+  Event.PlaybackState,
+  Event.PlaybackError,
+];
+
 interface Props {
   start: number;
   onFinished: () => void;
 }
 
+const renderControl = (
+  children: JSX.Element | JSX.Element[],
+  onPress: null | (() => void),
+  style = {}
+) => {
+  return (
+    <TouchableHighlight
+      underlayColor="transparent"
+      activeOpacity={0.3}
+      onPress={() => {
+        onPress?.();
+      }}
+      style={[styles.controls.control, style]}
+    >
+      {children}
+    </TouchableHighlight>
+  );
+};
+
+const renderBack = (onFinished: () => void) => {
+  return (
+    <View style={[styles.controls.top]}>
+      <ImageBackground
+        source={require("../assets/top-vignette.png")}
+        style={[styles.controls.column]}
+        imageStyle={styles.controls.vignette}
+      >
+        <SafeAreaView style={styles.controls.topControlGroup}>
+          {renderControl(
+            <Image source={require("../assets/back.png")} />,
+            () => onFinished()
+          )}
+          <View style={styles.controls.pullRight} />
+        </SafeAreaView>
+      </ImageBackground>
+    </View>
+  );
+};
+
+
+
 export const VideoPlayer: React.FC<Props> = function ({ start, onFinished }) {
+  const isPlayerReady = useSetupPlayer();
+  const [playerState, setPlayerState] = useState<State | null>(null)
+  const isPlaying = playerState === State.Playing;
+
+  useTrackPlayerEvents(events, (event) => {
+    if (event.type === Event.PlaybackError) {
+      console.warn('An error occured while playing the current track.');
+    }
+    if (event.type === Event.PlaybackState) {
+      setPlayerState(event.state);
+    }
+  });
+
   const [loading, setLoading] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [seekerPosition, setSeekerPosition] = useState(0);
@@ -151,44 +215,7 @@ export const VideoPlayer: React.FC<Props> = function ({ start, onFinished }) {
     });
   });
 
-  const renderControl = (
-    children: JSX.Element | JSX.Element[],
-    onPress: null | (() => void),
-    style = {}
-  ) => {
-    return (
-      <TouchableHighlight
-        underlayColor="transparent"
-        activeOpacity={0.3}
-        onPress={() => {
-          onPress?.();
-        }}
-        style={[styles.controls.control, style]}
-      >
-        {children}
-      </TouchableHighlight>
-    );
-  };
-
-  const renderBack = () => {
-    return (
-      <View style={[styles.controls.top]}>
-        <ImageBackground
-          source={require("../assets/top-vignette.png")}
-          style={[styles.controls.column]}
-          imageStyle={styles.controls.vignette}
-        >
-          <SafeAreaView style={styles.controls.topControlGroup}>
-            {renderControl(
-              <Image source={require("../assets/back.png")} />,
-              () => onFinished()
-            )}
-            <View style={styles.controls.pullRight} />
-          </SafeAreaView>
-        </ImageBackground>
-      </View>
-    );
-  };
+ 
 
   const renderScrubber = () => {
     if (loading) {
@@ -207,6 +234,26 @@ export const VideoPlayer: React.FC<Props> = function ({ start, onFinished }) {
       },
       styles.controls.playPause
     );
+    const AudioControl = renderControl(
+      <Text style={{color: "blue"}}>{isPlaying ? "Pause Audio" : "Play Audio"}</Text>,
+      async () => {
+        if(isPlaying) {
+          try {
+            TrackPlayer.pause();
+          } catch (e) {
+            console.log(`Error for pause: `, e)
+          }
+          
+        } else {
+          try {
+            TrackPlayer.play();
+          } catch (e) {
+            console.log(`Error for play: `, e)
+          }
+        }
+      }, 
+     styles.controls.playPause
+    )
 
     return (
       <View style={[styles.controls.bottom]}>
@@ -221,6 +268,7 @@ export const VideoPlayer: React.FC<Props> = function ({ start, onFinished }) {
           >
             {playPauseControl}
             {PipControl}
+            {AudioControl}
             {timerControl}
           </SafeAreaView>
         </ImageBackground>
@@ -321,16 +369,24 @@ export const VideoPlayer: React.FC<Props> = function ({ start, onFinished }) {
     );
   };
 
+  if (!isPlayerReady) {
+    return (
+      <SafeAreaView style={styles.audioLoading.screenContainer}>
+        <ActivityIndicator />
+      </SafeAreaView>
+    );
+  }
+
   return (
     <TouchableWithoutFeedback style={styles.player.container}>
       <View style={styles.player.container}>
-        <Video
+        {/* <Video
           source={{
             uri: "https://cdn81168665.blazingcdn.net/timeline/hartley-e001-s001a-01-2b6d4c/stream/index.m3u8",
           }}
           ref={primaryRef}
           resizeMode={"contain"}
-          paused={isPaused}
+          paused={true}
           muted={false}
           rate={1.0}
           pictureInPicture={isPip}
@@ -352,9 +408,9 @@ export const VideoPlayer: React.FC<Props> = function ({ start, onFinished }) {
           automaticallyWaitsToMinimizeStalling={false}
           onAudioBecomingNoisy={() => setIsPaused(true)}
           bufferConfig={bufferConfig}
-        />
+        /> */}
         {renderError()}
-        {renderBack()}
+        {renderBack(onFinished)}
         {renderScrubber()}
       </View>
     </TouchableWithoutFeedback>
@@ -362,6 +418,14 @@ export const VideoPlayer: React.FC<Props> = function ({ start, onFinished }) {
 };
 
 const styles = {
+  audioLoading: StyleSheet.create({
+    screenContainer: {
+      flex: 1,
+      backgroundColor: '#212121',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }
+  }),
   player: StyleSheet.create({
     container: {
       overflow: "hidden",

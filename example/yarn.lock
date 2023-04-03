@@ -2918,7 +2918,7 @@ depd@2.0.0:
 
 deprecated-react-native-prop-types@^2.2.0:
   version "2.3.0"
-  resolved "https://registry.npmjs.org/deprecated-react-native-prop-types/-/deprecated-react-native-prop-types-2.3.0.tgz"
+  resolved "https://registry.yarnpkg.com/deprecated-react-native-prop-types/-/deprecated-react-native-prop-types-2.3.0.tgz#c10c6ee75ff2b6de94bb127f142b814e6e08d9ab"
   integrity sha512-pWD0voFtNYxrVqvBMYf5gq3NA2GCpfodS1yNynTPc93AYA/KEMGeWDqqeUB6R2Z9ZofVhks2aeJXiuQqKNpesA==
   dependencies:
     "@react-native/normalize-color" "*"
@@ -4295,7 +4295,7 @@ jsonfile@^6.0.1:
 
 keymirror@^0.1.1:
   version "0.1.1"
-  resolved "https://registry.npmjs.org/keymirror/-/keymirror-0.1.1.tgz"
+  resolved "https://registry.yarnpkg.com/keymirror/-/keymirror-0.1.1.tgz#918889ea13f8d0a42e7c557250eee713adc95c35"
   integrity sha512-vIkZAFWoDijgQT/Nvl2AHCMmnegN2ehgTPYuyy2hWQkQSntI0S7ESYqdLkoSe1HyEBFHHkCgSIvVdSEiWwKvCg==
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
@@ -5560,9 +5560,14 @@ react-native-safe-area-context@^4.5.0:
   resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-4.5.0.tgz"
   integrity sha512-0WORnk9SkREGUg2V7jHZbuN5x4vcxj/1B0QOcXJjdYWrzZHgLcUzYWWIUecUPJh747Mwjt/42RZDOaFn3L8kPQ==
 
+react-native-track-player@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-track-player/-/react-native-track-player-3.2.0.tgz#c7b7a53eaf4c248af2ac876ef349feaee2ef774a"
+  integrity sha512-svv6TOgU/quFV1aajG5PskVhgFG0wHQtO+aYs6cIH0D27ckzN8WVoC3jI94m1CVaSgLMw48P911csYuD2fIcqA==
+
 "react-native-video@git+https://github.com/MatthiasX86/react-native-video.git":
   version "6.0.0-alpha.5"
-  resolved "git+https://github.com/MatthiasX86/react-native-video.git#78273032b58466425d199754d75ff2e30ee341de"
+  resolved "git+https://github.com/MatthiasX86/react-native-video.git#7ce4f13c0185d7d70b5e2f77de0ac9f94d30b597"
   dependencies:
     deprecated-react-native-prop-types "^2.2.0"
     keymirror "^0.1.1"

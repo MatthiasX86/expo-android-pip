@@ -447,6 +447,9 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
+  - react-native-track-player (3.2.0):
+    - React-Core
+    - SwiftAudioEx (= 0.15.3)
   - react-native-video (6.0.0-alpha.5):
     - React-Core
     - react-native-video/Video (= 6.0.0-alpha.5)
@@ -540,6 +543,7 @@ PODS:
     - React-logger (= 0.71.4)
     - React-perflogger (= 0.71.4)
   - SocketRocket (0.6.0)
+  - SwiftAudioEx (0.15.3)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -610,6 +614,7 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - react-native-flipper (from `../node_modules/react-native-flipper`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - react-native-track-player (from `../node_modules/react-native-track-player`)
   - react-native-video (from `../node_modules/react-native-video`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -646,6 +651,7 @@ SPEC REPOS:
     - PromisesObjC
     - PromisesSwift
     - SocketRocket
+    - SwiftAudioEx
     - YogaKit
 
 EXTERNAL SOURCES:
@@ -729,6 +735,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-flipper"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
+  react-native-track-player:
+    :path: "../node_modules/react-native-track-player"
   react-native-video:
     :path: "../node_modules/react-native-video"
   React-perflogger:
@@ -818,6 +826,7 @@ SPEC CHECKSUMS:
   React-logger: 0d58569ec51d30d1792c5e86a8e3b78d24b582c6
   react-native-flipper: 9645ebaaae25790d3a46725497ef35e2b4afaf3a
   react-native-safe-area-context: 39c2d8be3328df5d437ac1700f4f3a4f75716acc
+  react-native-track-player: 0c26d981b5097910486cbbeb6d8f5352d41be069
   react-native-video: a38e0a394fd8884fef4a48d866f1ed9a930f8385
   React-perflogger: 0bb0522a12e058f6eb69d888bc16f40c16c4b907
   React-RCTActionSheet: bfd675a10f06a18728ea15d82082d48f228a213a
@@ -833,6 +842,7 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 8fa50b38df6b992c76537993a2b0553d3b088004
   ReactCommon: b49a4b00ca6d181ff74b17c12b2d59ac4add0bde
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
+  SwiftAudioEx: 83eabba2940924fc1c0d5cb0896049921365229c
   Yoga: 79dd7410de6f8ad73a77c868d3d368843f0c93e0
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 

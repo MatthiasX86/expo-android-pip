@@ -26,9 +26,6 @@ export default {
       "**/*"
     ],
     ios: {
-      supportsTablet: true
-    },
-    ios: {
       supportsTablet: true,
       bundleIdentifier: "expo.modules.androidpip.example",
       infoPlist: {
